@@ -1,0 +1,11 @@
+use chrome rest client or postman
+----------------------------------
+
+http://localhost:7060/api/isValidUser
+method = POST
+body ={
+        "loginId" :"vivek",
+        "password" : "pass"
+      }
+
+      Content-Type=application/json

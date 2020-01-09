@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AM-Manage Assets</title>
+</head>
+<body>
+
+<div align="center">
+    <h1>Manage Assets</h1>
+
+    <form onsubmit="return processForm();">
+        <div>
+            <span>Asset No:</span>
+            <span><input type="text" name="search_asset_no" id="search_asset_no" /></span>
+            <span>
+                <select name="search_asset_type" id="search_asset_type">
+                    <option selected value="">All</option>
+                    <option value="Laptop">Laptop</option>
+                    <option value="Seat">Seat</option>
+                </select>
+            </span>
+            <span>
+                <select name="search_asset_is_available" id="search_asset_is_available">
+                    <option selected value="">All</option>
+                    <option value="true">Available</option>
+                    <option value="false">Allocated</option>
+                </select>
+            </span>
+            <span><input type="submit" value="Search" /></span>
+        </div>
+    </form>
+
+    <div id="search-result" class="search-result"></div>
+
+    <br/><br/>
+    <hr/>
+    <a href="home.html">Home</a>
+
+    <div id="allocate-asset-dialog" title="Allocate Asset to User">
+        <span>User Id</span>
+        <span>
+            <input id="assetAllocateToUserId" asset_id="" type="text" name="assetAllocateToUserId" placeholder="AM-123" />
+        </span>
+    </div>
+
+    <div id="asset-audit-dialog" title="Asset Audit">
+        <div id="asset-audit-dialog-container"></div>
+    </div>
+</div>
+
+<div class="footer">
+    <p>
+        <span>Powered by <a href="http://wayofcoding.com">wayofcoding.com</a></span>&emsp;
+        <span>Mobile : <a href="#">809 555 3563</a></span>&emsp;
+        <span>Mail To: <a href="mailto:wayofcoding@gmail.com">wayofcoding@gmail.com</a>.</span>
+    </p>
+</div>
+</body>
+</html>
+
+<link rel="stylesheet" href="css/am.css" />
+<link rel="stylesheet" href="css/lib/jquery-ui.min.css" />
+<script type="text/javascript" src="js/lib/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js/lib/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/lib/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/request-helper.js"></script>
+<script type="text/javascript" src="js/session_validator.js"></script>
+<script type="text/javascript" src="js/manage-assets.js"></script>
+

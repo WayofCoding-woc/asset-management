@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AM-Search User</title>
+</head>
+<body>
+
+<div align="center">
+    <h1>Search User</h1>
+
+    <form onsubmit="return processForm();">
+        <div>
+            <span>User Name:</span>
+            <span><input type="text" name="search_user_name" id="search_user_name" /></span>
+            <span><input type="submit" value="Search" /></span>
+        </div>
+    </form>
+
+    <div id="user-search-result" class="search-result"></div>
+
+    <br/><br/>
+    <hr/>
+    <a href="home.html">Home</a>
+</div>
+<div class="footer">
+    <p>
+        <span>Powered by <a href="http://wayofcoding.com">wayofcoding.com</a></span>&emsp;
+        <span>Mobile : <a href="#">809 555 3563</a></span>&emsp;
+        <span>Mail To: <a href="mailto:wayofcoding@gmail.com">wayofcoding@gmail.com</a>.</span>
+    </p>
+</div>
+</body>
+</html>
+
+<link rel="stylesheet" href="css/am.css" />
+<script type="text/javascript" src="js/lib/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js/lib/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/request-helper.js"></script>
+<script type="text/javascript" src="js/session_validator.js"></script>
+<script type="text/javascript" src="js/search-user.js"></script>
+

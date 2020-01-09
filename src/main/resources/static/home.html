@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AM-Home Page</title>
+</head>
+<body>
+
+<div id="menu">
+    <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="user_registration.html">User Registration</a></li>
+        <li><a href="search_user.html">Search User</a></li>
+        <li><a href="asset_registration.html">Asset Registration</a></li>
+        <li><a href="manage_assets.html">Manage Assets</a></li>
+        <li><a href="/api/doLogout">Logout</a></li>
+        <li><div id="logged_in_user_container"><h4>Hi <span id="welcome_user_name"></span></h4></div></li>
+    </ul>
+
+</div>
+
+<div>
+    <h1>Welcome! to Asset Management Portal</h1>
+    <br/><br/>
+    <div><a id="logged_in_user_profile_assets" href="#">View Your Profile & Assets</a></div>
+</div>
+
+<div class="footer">
+    <p>
+        <span>Powered by <a href="http://wayofcoding.com">wayofcoding.com</a></span>&emsp;
+        <span>Mobile : <a href="#">809 555 3563</a></span>&emsp;
+        <span>Mail To: <a href="mailto:wayofcoding@gmail.com">wayofcoding@gmail.com</a>.</span>
+    </p>
+</div>
+
+</body>
+</html>
+
+<link rel="stylesheet" href="css/am.css" />
+<script type="text/javascript" src="js/lib/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js/lib/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/request-helper.js"></script>
+<script type="text/javascript" src="js/session_validator.js"></script>
+<script type="text/javascript" src="js/home.js"></script>

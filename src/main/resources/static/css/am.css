@@ -1,0 +1,60 @@
+#logged_in_user_container{
+  color: aqua;
+  padding-left: 300px;
+  padding-right: 150px;
+  text-align: right;
+}
+#menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: darkslategrey;
+}
+
+#menu li {
+  float: left;
+}
+
+#menu li a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#menu li a:hover {
+  background-color: slategrey;
+}
+
+#menu .active {
+  background-color: brown;
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: darkslategrey;
+   color: white;
+   text-align: center;
+}
+
+.footer a{
+    color: gold;
+}
+
+.search-result table{
+    border: 2px solid lightslategrey;
+        padding: 5px;
+        margin: 15px;
+        /* border-collapse: collapse;*/
+}
+
+.search-result table, th, td {
+border: 1px solid lightslategrey;
+border-collapse: collapse;
+padding : 5px;
+}
