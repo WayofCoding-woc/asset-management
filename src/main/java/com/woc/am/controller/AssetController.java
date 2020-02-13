@@ -1,12 +1,9 @@
 package com.woc.am.controller;
 
-import com.woc.am.AMUtil;
 import com.woc.am.dto.AssetDTO;
 import com.woc.am.dto.AssetTypeDTO;
 import com.woc.am.dto.UserAssetAuditDTO;
-import com.woc.am.dto.UserDTO;
 import com.woc.am.service.AssetService;
-import org.apache.commons.lang3.BooleanUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
