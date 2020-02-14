@@ -1,4 +1,4 @@
-package com.woc.am.controller;
+package com.woc.am.web.controller;
 
 import com.woc.am.AMUtil;
 import com.woc.am.dto.UserDTO;

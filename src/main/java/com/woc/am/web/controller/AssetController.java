@@ -1,4 +1,4 @@
-package com.woc.am.controller;
+package com.woc.am.web.controller;
 
 import com.woc.am.dto.AssetDTO;
 import com.woc.am.dto.AssetTypeDTO;
