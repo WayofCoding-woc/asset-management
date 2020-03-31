@@ -94,10 +94,12 @@ public class SessionFilter implements Filter {
             if(!user_role_has_privileges.contains(requestURI)){
                 return true;
             }
-            String requestedUserId = httpServletRequest.getParameter("id");
-            Integer loggedInUserId = (Integer)session.getAttribute("id");
-            if(!requestedUserId.equals(String.valueOf(loggedInUserId))){
-                return true;
+            if(!API_USER_SESSION_EXISTS.equals(requestURI)){
+                String requestedUserId = httpServletRequest.getParameter("id");
+                Integer loggedInUserId = (Integer)session.getAttribute("id");
+                if(!requestedUserId.equals(String.valueOf(loggedInUserId))){
+                    return true;
+                }
             }
         } else if(SUPPORT_ROLE.equals(loggedInUserRole) && !support_role_has_privileges.contains(requestURI)){
             return true;

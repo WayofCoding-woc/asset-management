@@ -47,6 +47,9 @@ function viewUserDetails(id){
                         alert('unable to load data from server, please try again later...');
                     }
                 },
+                 statusCode: {
+                     307: sessionExpiredRedirectPage
+                 },
                 error: function( jqXhr, textStatus, errorThrown ){
                     console.log( errorThrown );
                 }
