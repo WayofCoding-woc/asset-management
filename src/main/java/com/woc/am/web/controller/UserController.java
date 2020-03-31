@@ -35,6 +35,7 @@ public class UserController {
             data.put("userName", session.getAttribute("userName"));
             data.put("session", session.getId());
             data.put("id", session.getAttribute("id"));
+            data.put("role", session.getAttribute("role"));
         }
 
         return new ResponseEntity<>(data, HttpStatus.OK);

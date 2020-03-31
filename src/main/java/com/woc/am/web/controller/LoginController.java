@@ -49,10 +49,12 @@ public class LoginController {
         session.setAttribute("loginId", user.getLoginId());
         session.setAttribute("userName", user.getUserName());
         session.setAttribute("id", user.getId());
+        session.setAttribute("role", user.getRole());
 
         data.put("userName", user.getUserName());
         data.put("session", session.getId());
         data.put("id", user.getId());
+        data.put("role", user.getRole());
 
         return new ResponseEntity<>(data, HttpStatus.OK);
     }

@@ -19,6 +19,7 @@ public class UserDTO implements Serializable {
     private Date dateOfJoining;
     private boolean isActive;
     private Date createdDate;
+    private String role;
     private List<AssetDTO> assets;
 
     public Integer getId() {
@@ -97,6 +98,14 @@ public class UserDTO implements Serializable {
         this.createdDate = createdDate;
     }
 
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
     public List<AssetDTO> getAssets() {
         return assets;
     }
@@ -131,6 +140,7 @@ public class UserDTO implements Serializable {
                 ", dateOfJoining=" + dateOfJoining +
                 ", isActive=" + isActive +
                 ", createdDate=" + createdDate +
+                ", role=" + role +
                 ", assets=" + assets +
                 '}';
     }

@@ -33,6 +33,7 @@ public class UserAssembler {
         u.setDateOfJoining(dto.getDateOfJoining());
         u.setCreatedDate(dto.getCreatedDate());
         u.setActive(dto.isActive());
+        u.setRole(dto.getRole());
 
         List<Asset> assets = assetAssembler.toDomain(dto.getAssets());
         u.setAssets(assets);
@@ -64,6 +65,7 @@ public class UserAssembler {
         dto.setDateOfJoining(user.getDateOfJoining());
         dto.setCreatedDate(user.getCreatedDate());
         dto.setActive(user.isActive());
+        dto.setRole(user.getRole());
 
         List<AssetDTO> assets = assetAssembler.fromDomain(user.getAssets());
         dto.setAssets(assets);

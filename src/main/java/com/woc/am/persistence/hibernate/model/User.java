@@ -36,6 +36,9 @@ public class User implements Serializable {
     @Column(name = "is_active", nullable = false)
     private boolean isActive;
 
+    @Column(name = "role")
+    private String role;
+
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     private List<Asset> assets;
@@ -107,6 +110,14 @@ public class User implements Serializable {
         isActive = active;
     }
 
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
     public List<Asset> getAssets() {
         return assets;
     }
@@ -134,6 +145,7 @@ public class User implements Serializable {
                 ", mobile=" + mobile +
                 ", dateOfJoining=" + dateOfJoining +
                 ", isActive=" + isActive +
+                ", role=" + role +
                 ", assets=" + assets +
                 ", createdDate=" + createdDate +
                 '}';
