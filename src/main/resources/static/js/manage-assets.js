@@ -127,7 +127,8 @@ function search(search_asset_no, search_asset_type, search_asset_is_available){
                     }
                 },
                 statusCode: {
-                   307: sessionExpiredRedirectPage
+                   307: sessionExpiredRedirectPage,
+                   401: unauthorizedAccessRedirectPage
                 },
                 error: function( jqXhr, textStatus, errorThrown ){
                     console.log( errorThrown );
@@ -160,7 +161,8 @@ function assetAllocateToUserIdRequestToServer(assetId, userId, userDisplayId){
             $('#action_container_for_asset_id_'+assetId).html('<a href="#" onclick="deallocateAssetFromUser('+assetId+');" >Deallocate</a>');
         },
         statusCode: {
-            307: sessionExpiredRedirectPage
+            307: sessionExpiredRedirectPage,
+            401: unauthorizedAccessRedirectPage
         },
         error: function( jqXhr, textStatus, errorThrown ){
             console.log( errorThrown );
@@ -189,7 +191,8 @@ function deallocateAssetFromUser(assetId){
             $('#action_container_for_asset_id_'+assetId).html('<a href="#" onclick="allocateAssetToUser('+assetId+');" >Allocate</a>');
         },
         statusCode: {
-            307: sessionExpiredRedirectPage
+            307: sessionExpiredRedirectPage,
+            401: unauthorizedAccessRedirectPage
         },
         error: function( jqXhr, textStatus, errorThrown ){
             console.log( errorThrown );
@@ -231,7 +234,8 @@ function showAuditForAssetId(assetId){
                 }
             },
             statusCode: {
-                 307: sessionExpiredRedirectPage
+                 307: sessionExpiredRedirectPage,
+                 401: unauthorizedAccessRedirectPage
             },
             error: function( jqXhr, textStatus, errorThrown ){
                 console.log( errorThrown );

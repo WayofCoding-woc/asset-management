@@ -8,7 +8,8 @@ var sessionExists = function(callback){
                     callback(data);
                 },
                 statusCode: {
-                    307: sessionExpiredRedirectPage
+                    307: sessionExpiredRedirectPage,
+                    401: unauthorizedAccessRedirectPage
                 },
                 error: function( jqXhr, textStatus, errorThrown ){
                     try{

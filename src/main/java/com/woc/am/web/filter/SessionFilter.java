@@ -60,7 +60,7 @@ public class SessionFilter implements Filter {
             boolean userUnAuthorized = isUserUnAuthorized(servletRequest, servletResponse, httpServletRequest, session);
             if(userUnAuthorized){
                 if (isAjax(httpServletRequest)) {
-                    httpServletResponse.setStatus(HttpServletResponse.SC_TEMPORARY_REDIRECT);
+                    httpServletResponse.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
                 }else{
                     httpServletResponse.sendRedirect(httpServletRequest.getContextPath() + "/unauthorized_access.html");
                 }

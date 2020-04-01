@@ -4,6 +4,12 @@ var sessionExpiredRedirectPage = function() {
      window.location.replace(currentUrl);
 }
 
+var unauthorizedAccessRedirectPage = function() {
+     var currentUrl = window.location.toString();
+     currentUrl = currentUrl.replace(window.location.pathname, '/unauthorized_access.html');
+     window.location.replace(currentUrl);
+}
+
 var isEmpty = function(input){
     if(null == input || 'undefined' == input || $.trim(input).length == 0){
         return true;

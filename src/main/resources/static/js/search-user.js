@@ -56,7 +56,8 @@ function searchUser(userName){
                     }
                 },
                 statusCode: {
-                   307: sessionExpiredRedirectPage
+                   307: sessionExpiredRedirectPage,
+                   401: unauthorizedAccessRedirectPage
                 },
                 error: function( jqXhr, textStatus, errorThrown ){
                     console.log( errorThrown );
