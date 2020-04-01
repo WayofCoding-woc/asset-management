@@ -44,6 +44,10 @@ public class LoginController {
             data.put("invalidCredentials", true);
             return new ResponseEntity<>(data, HttpStatus.OK);
         }
+        if(!user.isActive()){
+            data.put("inActiveUser", true);
+            return new ResponseEntity<>(data, HttpStatus.OK);
+        }
 
         HttpSession session = request.getSession();
         session.setAttribute("loginId", user.getLoginId());

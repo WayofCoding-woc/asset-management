@@ -19,6 +19,7 @@ function viewUserDetails(id){
                         $('#email').html(data.email);
                         $('#mobile').html(data.mobile);
                         $('#doj').html(data.dateOfJoiningStr);
+                        $('#role').html(data.role);
                         $('#is_active').html(data.active.toString());
                         $('#created_date').html(data.createdDateStr);
 

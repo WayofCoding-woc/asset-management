@@ -36,7 +36,13 @@ function processForm(){
                 var currentUrl = window.location.toString();
                 currentUrl = currentUrl.replace(window.location.pathname, '/error.html');
                 window.location.replace(currentUrl);
-            }
+            }else if(null != data.inActiveUser && 'true' == data.inActiveUser.toString()){
+                 var currentUrl = window.location.toString();
+                 currentUrl = currentUrl.replace(window.location.pathname, '/inactive_user.html');
+                 window.location.replace(currentUrl);
+             }
+
+
         },
         error: function( jqXhr, textStatus, errorThrown ){
             console.log( errorThrown );

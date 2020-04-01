@@ -46,5 +46,10 @@ function processForm(){
         return false;
     }
 
+    if($.trim($('#role').val()).length == 0){
+        alert('please select the role');
+        return false;
+     }
+
     return true;
 }

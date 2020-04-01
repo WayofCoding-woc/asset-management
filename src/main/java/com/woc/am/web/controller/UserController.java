@@ -51,6 +51,7 @@ public class UserController {
         String mobile = request.getParameter("mobile");
         String doj = request.getParameter("doj");
         boolean active = BooleanUtils.toBoolean(request.getParameter("active"));
+        String role = request.getParameter("role");
 
         UserDTO userDTO = new UserDTO();
         userDTO.setLoginId(loginId);
@@ -60,6 +61,7 @@ public class UserController {
         userDTO.setMobile(Long.valueOf(mobile));
         userDTO.setDateOfJoining(AMUtil.parseDate(doj));
         userDTO.setActive(active);
+        userDTO.setRole(role);
         userDTO.setCreatedDate(new Date());
 
         logger.debug("registerUser api input={}", userDTO);
@@ -79,6 +81,10 @@ public class UserController {
     public ResponseEntity<?> getUserDetailsById(@RequestParam("id") Integer id){
         logger.debug("getUserDetails api got triggered for id={}", id);
         UserDTO user = userService.findById(id);
+        if(null != user){
+            user.setLoginId(null);
+            user.setPassword(null);
+        }
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
@@ -86,6 +92,10 @@ public class UserController {
     public ResponseEntity<?> getUserDetailsByLoginId(@RequestParam("loginId") String loginId){
         logger.debug("getUserDetailsByLoginId api got triggered for loginId={}", loginId);
         UserDTO user = userService.findByLoginId(loginId);
+        if(null != user){
+            user.setLoginId(null);
+            user.setPassword(null);
+        }
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
@@ -93,6 +103,10 @@ public class UserController {
     public ResponseEntity<?> searchUser(@RequestParam("userName") String userName){
         logger.debug("searchUser api got triggered for userName={}", userName);
         List<UserDTO> users = userService.searchUser(userName);
+        users.stream().forEach(u->{
+            u.setLoginId(null);
+            u.setPassword(null);
+        });
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
 

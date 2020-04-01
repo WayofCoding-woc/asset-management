@@ -32,6 +32,7 @@ function searchUser(userName){
                                           +'<th>Email</th>'
                                           +'<th>Mobile</th>'
                                           +'<th>Date of Joining</th>'
+                                          +'<th>Role</th>'
                                           +'<th>Active?</th>'
                                           +'<th>Created Date</th>'
                                       +'</tr>';
@@ -44,6 +45,7 @@ function searchUser(userName){
                                                     +'<td>'+row.email+'</td>'
                                                     +'<td>'+row.mobile+'</td>'
                                                     +'<td>'+row.dateOfJoiningStr+'</td>'
+                                                    +'<td>'+row.role+'</td>'
                                                     +'<td>'+row.active+'</td>'
                                                     +'<td>'+row.createdDateStr+'</td>'
                                                 +'</tr>';
