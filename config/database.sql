@@ -11,6 +11,7 @@ CREATE TABLE am_user (
   date_of_joining datetime DEFAULT NULL,
   is_active bit(1) NOT NULL,
   created_date datetime DEFAULT NULL,
+  role varchar(128),
   PRIMARY KEY (id),
   UNIQUE KEY UK_d6ikwcv1fdsy9ms19mro8rmo2 (login_id)
 );
@@ -28,29 +29,30 @@ CREATE TABLE am_asset (
   asset_name varchar(255) DEFAULT NULL,
   asset_type_id int(11) DEFAULT NULL,
   user_id int(11) DEFAULT NULL,
+  last_updated_date datetime DEFAULT NULL,
+  created_date datetime DEFAULT NULL,
   PRIMARY KEY (id),
   KEY FKe2qfcgkkdhwdna5kvj21jpqql (asset_type_id),
   KEY FKarddqxh04k21fjyq4jmh3b1ke (user_id)
 );
 
 
-insert into am_user(login_id, password, is_active) values('vivek', 'pass', true);
+insert into am_user(login_id, password, is_active, user_name, email, mobile, date_of_joining, created_date, role)
+values('woc', 'pass', true, 'WayOfCoding Java Training', 'wayofcoding@gmail.com', 8095553563, now(), now(),  'admin');
 
 select * from am_user;
 
-update am_user set login_id='061a01a98f80f415b1431236b62bb10b'
-where id=1;
-update am_user set password='1a1dc91c907325c69271ddf0c944bc72'
-where id=1;
+update am_user set login_id='138014aadcc837d4f473dd0e2333b9f4' where id=1;
+update am_user set password='1a1dc91c907325c69271ddf0c944bc72' where id=1;
 
 
-INSERT INTO `am_db`.`am_asset_type` (`id`,`asset_type_code`,`asset_type_description`) VALUES(1, 'Laptop', 'Laptop');
-INSERT INTO `am_db`.`am_asset_type` (`id`,`asset_type_code`,`asset_type_description`) VALUES(2, 'Seat', 'Seat');
+INSERT INTO am_asset_type (id,asset_type_code,asset_type_description) VALUES(1, 'Laptop', 'Laptop');
+INSERT INTO am_asset_type (id,asset_type_code,asset_type_description) VALUES(2, 'Seat', 'Seat');
 
-INSERT INTO `am_db`.`am_asset` (`id`, `asset_no`, `asset_name`, `asset_type_id`) VALUES ('1', 'pqr-123', 'lenovo E3490', '1');
-INSERT INTO `am_db`.`am_asset` (`id`, `asset_no`, `asset_name`, `asset_type_id`) VALUES ('2', 'mnp-4334', 'dell lattitude 5400', '1');
+INSERT INTO am_asset (id, asset_no, asset_name, asset_type_id) VALUES ('1', 'pqr-123', 'lenovo E3490', '1');
+INSERT INTO am_asset (id, asset_no, asset_name, asset_type_id) VALUES ('2', 'mnp-4334', 'dell lattitude 5400', '1');
 
-SELECT * FROM am_db.am_asset;
+SELECT * FROM am_asset;
 
 
 CREATE TABLE am_user_asset_audit (

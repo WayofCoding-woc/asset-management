@@ -9,9 +9,15 @@ import java.util.Date;
 public class AMUtilTest {
 
     @Test
+    public void getHash(){
+        String wocHash = AMUtil.hash("woc");
+        System.out.println("wocHash=" + wocHash);
+    }
+
+    @Test
     public void hash(){
-        String vivek = AMUtil.hash("vivek");
-        Assert.assertEquals("061a01a98f80f415b1431236b62bb10b", vivek);
+        String wocHash = AMUtil.hash("woc");
+        Assert.assertEquals("138014aadcc837d4f473dd0e2333b9f4", wocHash);
 
         String pass = AMUtil.hash("pass");
         Assert.assertEquals("1a1dc91c907325c69271ddf0c944bc72", pass);

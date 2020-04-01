@@ -35,7 +35,7 @@ public class LoginController {
 
     @PostMapping(value = "/doLogin", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> doLogin(@RequestBody LoginCredentialsDTO loginCredentials, HttpServletRequest request){
-        logger.info("doLogin api got triggered, loginCredentials={}", loginCredentials);
+        logger.debug("doLogin api got triggered");
         UserDTO user = loginService.doLogin(loginCredentials);
 
         Map<String, Object> data = new HashMap<>();
