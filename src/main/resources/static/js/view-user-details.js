@@ -1,6 +1,7 @@
 $(document).ready(function(){
     var id = queryParam('id');
     sessionExists(function(data){
+        showMenu(data);
         viewUserDetails(id);
     })
 });

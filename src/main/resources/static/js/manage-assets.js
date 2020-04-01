@@ -1,6 +1,7 @@
 $(document).ready(function(){
     var assetNo = queryParam('assetNo');
     sessionExists(function(data){
+        showMenu(data);
         if(isEmpty(assetNo)){
             search('', '', '');
         }else{

@@ -1,5 +1,6 @@
 $(document).ready(function(){
     sessionExists(function(data){
+        showMenu(data);
         searchUser('');
     })
 });

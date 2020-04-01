@@ -20,3 +20,23 @@ var sessionExists = function(callback){
         });
 
 }
+
+var showMenu = function(data){
+
+        if(null != data.session && 'undefined' != data.session){
+            $('#welcome_user_name').html(data.userName);
+
+            if(data.role == 'support'){
+                $('#user_registration_id').show();
+                $('#search_user_id').show();
+            }
+            if(data.role == 'admin'){
+                $('#user_registration_id').show();
+                $('#search_user_id').show();
+
+                $('#asset_registration_id').show();
+                $('#manage_assets_id').show();
+            }
+
+        }
+}
