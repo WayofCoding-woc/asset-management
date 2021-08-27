@@ -4,6 +4,7 @@ import com.woc.am.dto.AssetDTO;
 import com.woc.am.dto.AssetTypeDTO;
 import com.woc.am.dto.UserAssetAuditDTO;
 import com.woc.am.service.AssetService;
+import java.util.HashMap;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -74,9 +75,9 @@ public class AssetController {
         try{
             assetService.allocateAsset(assetId, userId);
         }catch (Exception e){
-            return new ResponseEntity<>(Map.of("errorMsg", e.getMessage()), HttpStatus.OK);
+            return new ResponseEntity<>(mapOf("errorMsg", e.getMessage()), HttpStatus.OK);
         }
-        return new ResponseEntity<>(Map.of("errorMsg", StringUtils.EMPTY),HttpStatus.OK);
+        return new ResponseEntity<>(mapOf("errorMsg", StringUtils.EMPTY),HttpStatus.OK);
     }
 
     @PostMapping(value = "/deallocate")
@@ -86,9 +87,9 @@ public class AssetController {
         try{
             assetService.deallocateAsset(assetId);
         }catch (Exception e){
-            return new ResponseEntity<>(Map.of("errorMsg", e.getMessage()), HttpStatus.OK);
+            return new ResponseEntity<>(mapOf("errorMsg", e.getMessage()), HttpStatus.OK);
         }
-        return new ResponseEntity<>(Map.of("errorMsg", StringUtils.EMPTY),HttpStatus.OK);
+        return new ResponseEntity<>(mapOf("errorMsg", StringUtils.EMPTY),HttpStatus.OK);
     }
 
     @GetMapping(value = "/audit")
@@ -96,6 +97,12 @@ public class AssetController {
         logger.debug("getAssetAudit api got triggered for assetId={}", assetId);
         List<UserAssetAuditDTO> assetAuditDTOS = assetService.getAssetAudit(assetId);
         return new ResponseEntity<>(assetAuditDTOS, HttpStatus.OK);
+    }
+
+    private Map<String, String> mapOf(String key, String value){
+        Map<String, String> map  = new HashMap<>();
+        map.put(key, value);
+        return map;
     }
 
 }

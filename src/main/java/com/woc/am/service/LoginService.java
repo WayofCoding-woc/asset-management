@@ -3,6 +3,7 @@ package com.woc.am.service;
 import com.woc.am.dao.LoginDao;
 import com.woc.am.dto.LoginCredentialsDTO;
 import com.woc.am.dto.UserDTO;
+import java.util.HashSet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -32,7 +33,10 @@ public class LoginService {
     public Set<Integer> getAllOperation(String loginId) {
 
         //do the hashing after retrieval of data from db
-        return Set.of(1,5);
+        Set<Integer> operationIds = new HashSet<>();
+        operationIds.add(1);
+        operationIds.add(5);
+        return operationIds;
     }
 
 }

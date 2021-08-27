@@ -12,5 +12,6 @@ public interface AssetDao {
     void allocateAsset(Integer assetId, Integer userId);
     void deallocateAsset(Integer assetId);
     AssetTypeDTO getAssetByType(String assetType);
+    AssetTypeDTO createAssetByType(AssetTypeDTO assetTypeDTO);
     List<UserAssetAuditDTO> getAssetAudit(Integer assetId);
 }

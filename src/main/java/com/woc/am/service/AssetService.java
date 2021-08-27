@@ -50,6 +50,10 @@ public class AssetService {
         return assetDao.getAssetByType(assetType);
     }
 
+    public AssetTypeDTO createAssetByType(AssetTypeDTO assetTypeDTO){
+        return assetDao.createAssetByType(assetTypeDTO);
+    }
+
     public List<UserAssetAuditDTO> getAssetAudit(Integer assetId) {
         return assetDao.getAssetAudit(assetId);
     }

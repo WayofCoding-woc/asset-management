@@ -137,6 +137,12 @@ public class HibernateAssetDaoImpl implements AssetDao {
     }
 
     @Override
+    public AssetTypeDTO createAssetByType(AssetTypeDTO assetTypeDTO) {
+        AssetType assetType = assetTypeRepository.save(assetTypeAssembler.toDomain(assetTypeDTO));
+        return assetTypeAssembler.fromDomain(assetType);
+    }
+
+    @Override
     public List<UserAssetAuditDTO> getAssetAudit(Integer assetId) {
         List<UserAssetAudit> userAssetAudits = userAssetAuditRepository.findByAssetId(assetId);
         return userAssetAuditAssembler.fromDomain(userAssetAudits);

@@ -18,26 +18,28 @@ public class SessionFilter implements Filter {
     private static final String API_USER_GET_USER_DETAILS_BY_ID = "/api/user/getUserDetailsById";
     private static final String API_USER_SEARCH_USER = "/api/user/searchUser";
     private static final String API_USER_SESSION_EXISTS = "/api/user/sessionExists";
-    private static final Set<String> searchUsers = Set.of(API_USER_GET_USER_DETAILS_BY_ID, API_USER_SEARCH_USER);
-    private static final Set<String> registerUsers = Set.of("/api/user/registerUser");
-    private static final Set<String> manageAssets = Set.of("/api/asset/createAsset",
-                                                            "/api/asset/searchAsset",
-                                                            "/api/asset/allocate",
-                                                            "/api/asset/deallocate",
-                                                            "/api/asset/audit");
+    private static final Set<String> searchUsers =  new HashSet<String>(){{add(API_USER_GET_USER_DETAILS_BY_ID); add(API_USER_SEARCH_USER);}};
+    private static final Set<String> registerUsers = new HashSet<String>(){{add("/api/user/registerUser");}};
+    private static final Set<String> manageAssets = new HashSet<String>() {{
+                                                            add("/api/asset/createAsset");
+                                                            add("/api/asset/searchAsset");
+                                                            add("/api/asset/allocate");
+                                                            add("/api/asset/deallocate");
+                                                            add("/api/asset/audit");
+                                                        }};
 
-    private static final Set<String> user_role_has_privileges = new HashSet<>(){{
+    private static final Set<String> user_role_has_privileges = new HashSet<String>(){{
         add(API_USER_SESSION_EXISTS);
         add(API_USER_GET_USER_DETAILS_BY_ID);
     }};
 
-    private static final Set<String> support_role_has_privileges = new HashSet<>(){{
+    private static final Set<String> support_role_has_privileges = new HashSet<String>(){{
         add(API_USER_SESSION_EXISTS);
         addAll(searchUsers);
         addAll(registerUsers);
     }};
 
-    private static final Set<String> admin_role_has_privileges = new HashSet<>(){{
+    private static final Set<String> admin_role_has_privileges = new HashSet<String>(){{
         add(API_USER_SESSION_EXISTS);
         addAll(searchUsers);
         addAll(registerUsers);
