@@ -75,6 +75,7 @@
     </dependencies>
 
     <build>
+        <finalName>am</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
