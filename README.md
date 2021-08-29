@@ -2,7 +2,7 @@
 - This project is implemented for the learning and practice purpose only.
 - Note : make sure you have the java 8 or above installed in  you computer.
 
-##This application has capability to run in two different modes -
+## This application has capability to run in two different modes -
 **(I) In-Memory Mode :** It means without the database. This can be opted, If you do not have mysql db installed in your
                     computer but wanted to explore the functionalities of the application or want to do the manual / 
                     automation testing. This is the default mode.
@@ -11,7 +11,7 @@
                 in-flow/out-flow from your database with the standard sql.
 
 
-###(A.) To run the application using in-memory db, steps for this -
+### (A.) To run the application using in-memory db, steps for this -
 - **step-1 :** open the command prompt or terminal
 - **step-2 :** go to the unzipped folder where am.jar reside, you can use "cd" command for this.
 - **step-3 :** run the application using below command.
@@ -27,7 +27,7 @@
 ____________________________________________________________________________________________
 
 
-###(B.) To run the application using mysql db, for this - firstly create the database and tables, steps for this-
+### (B.) To run the application using mysql db, for this - firstly create the database and tables, steps for this-
 - **step-1 :** Execute this database script file(database.sql) in your mysql workbench and update 
  these db properties inside the application.properties file.
   - `db.host=localhost`
