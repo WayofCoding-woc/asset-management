@@ -1,6 +1,26 @@
 # Asset-Management
-- This project is implemented for the learning and practice purpose only.
-- Note : make sure you have the java 8 or above installed in  you computer.
+- **_This project is implemented for the learning and practice purpose only._**
+
+
+- **Project Description :** This project would be helpful for an organization
+where many employees get some assets like- **laptop, data-card, printer, monitor,
+car, bike etc.** To manage assets efficiently, it should be **recorded** in the system with
+details like **assetNo, assetDescription, isAvailable/allocatedToWhom etc.** 
+  - **There are three available roles:**
+    - **Admin :** An admin has full control of the application. Admin can **register users/assets/allocate/deallocate** etc.
+    - **Support :** A support person has **limited access** to the application.
+                He can **register a user, search existing user, see allocated assets.**
+    - **User :** An employee having user role has **limited access** to **see his profile details** and **all allocated assets to him only.** 
+
+
+- **Software Needed :** 
+  - Java-8 or above
+  - Mysql/Mariadb-5 or above
+
+
+____________________________________________________________________________________________
+
+
 
 ## This application has capability to run in two different modes -
 **(I) In-Memory Mode :** It means without the database. This can be opted, If you do not have mysql db installed in your
@@ -49,4 +69,8 @@ ________________________________________________________________________________
 - **step-8 :** [Optional] you can find the rest apis used in this project by hitting this url
   - [http://localhost:7060/swagger-ui.html](http://localhost:7060/)
 
- 
+
+ ____________________________________________________________________________________________
+
+
+
