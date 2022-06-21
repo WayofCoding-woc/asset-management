@@ -10,7 +10,7 @@
 
     <properties>
         <swagger.version>2.4.0</swagger.version>
-        <mysql.connector.java.version>8.0.17</mysql.connector.java.version>
+        <mysql.connector.java.version>8.0.28</mysql.connector.java.version>
         <maven.compiler.plugin.version>3.6.1</maven.compiler.plugin.version>
         <apache.commons.lang.version>3.9</apache.commons.lang.version>
         <maven.compiler.source>8</maven.compiler.source>
